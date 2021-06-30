@@ -3,7 +3,7 @@
     <v-img
       class="white--text align-end"
       height="200px"
-      src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+      :src="game.cover"
     >
       <v-card-title>{{ game.title }}</v-card-title>
     </v-img>
@@ -76,3 +76,5 @@ export default {
   },
 };
 </script>
+
+// src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
