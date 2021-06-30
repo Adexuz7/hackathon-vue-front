@@ -30,7 +30,7 @@
               <span>Genre</span>
             </v-col>
             <v-col>
-              <span>{{ game.genre }}</span>
+              <span>{{ genres }}</span>
             </v-col>
           </v-row>
 
@@ -39,7 +39,7 @@
               <span>Platforms</span>
             </v-col>
             <v-col>
-              <span>{{ game.platform }}</span>
+              <span>{{ platforms }}</span>
             </v-col>
           </v-row>
 
@@ -71,8 +71,14 @@ export default {
   },
   computed: {
     releaseDate: function () {
-      return this.game.released.substring(0, 10);
+      return this.game.released.substring(0, 10)
     },
+    genres: function () {
+      return this.game.genre.join(", ");
+    },
+    platforms: function () {
+      return this.game.platform.join(", ");
+    }
   },
 };
 </script>
