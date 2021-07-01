@@ -24,8 +24,5 @@
 <script>
 export default {
   name: "Welcome",
-  data: () => ({
-
-  }),
 };
 </script>
