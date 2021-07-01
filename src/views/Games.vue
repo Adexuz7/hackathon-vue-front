@@ -1,7 +1,7 @@
 <template>
   <v-container>
-    <v-row justify="center" v-if="games">
-      <v-col v-for="(game, index) in games" :key="index" class="game-card">
+    <v-row v-if="games">
+      <v-col v-for="(game, index) in games" :key="index">
         <Game :game="game" />
       </v-col>
     </v-row>

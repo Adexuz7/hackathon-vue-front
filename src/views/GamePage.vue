@@ -1,7 +1,7 @@
 <template>
   <v-container>
-    <v-row justify="center" v-if="game">
-      <v-col class="game-card">
+    <v-row v-if="game">
+      <v-col>
         <Game :game="game" />
       </v-col>
     </v-row>
