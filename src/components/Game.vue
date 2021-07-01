@@ -1,11 +1,9 @@
 <template>
   <v-card class="mx-auto" max-width="400">
-    <v-img
-      class="white--text align-end"
-      height="200px"
-      :src="game.cover"
-    >
-      <v-card-title>{{ game.title }}</v-card-title>
+    <v-img class="white--text align-end" height="200px" :src="game.cover">
+      <v-card-title>
+        <span class="title">{{ game.title }}</span>
+      </v-card-title>
     </v-img>
 
     <v-card-subtitle class="pb-0">
@@ -55,11 +53,11 @@
       </v-row>
     </v-card-text>
 
-    <v-card-actions>
+    <!-- <v-card-actions>
       <v-btn color="orange" text> Comment </v-btn>
 
       <v-btn color="orange" text> Share </v-btn>
-    </v-card-actions>
+    </v-card-actions> -->
   </v-card>
 </template>
 
@@ -71,16 +69,24 @@ export default {
   },
   computed: {
     releaseDate: function () {
-      return this.game.released.substring(0, 10)
+      return this.game.released.substring(0, 10);
     },
     genres: function () {
       return this.game.genre.join(", ");
     },
     platforms: function () {
       return this.game.platform.join(", ");
-    }
+    },
   },
 };
 </script>
 
-// src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+<style scoped>
+.title {
+  color: white;
+  text-shadow: #000 0px 0px 1px,
+    1px 1px 0 #000;
+}
+</style>
+
+// alt image when game has no cover? src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
