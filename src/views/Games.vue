@@ -1,8 +1,17 @@
 <template>
   <v-container>
-    <v-row justify="center" v-if="games">
-      <v-col v-for="(game, index) in games" :key="index" class="game-card">
-        <Game :game="game" />
+    <v-row v-if="games">
+      <v-col v-for="(game, index) in games" :key="index">
+        <router-link
+          :to="{
+            name: 'GamePage',
+            params: {
+              gameId: game._id,
+            },
+          }"
+        >
+          <Game :game="game" />
+        </router-link>
       </v-col>
     </v-row>
   </v-container>
@@ -27,3 +36,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+a {
+  text-decoration: none;
+}
+</style>

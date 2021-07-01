@@ -5,4 +5,8 @@ export default {
     const response = await api.get("/games");
     return response.data;
   },
+  async getOneGame(gameId) {
+    const response = await api.get(`/games/${gameId}`);
+    return response.data;
+  },
 };
