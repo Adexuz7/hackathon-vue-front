@@ -10,7 +10,7 @@
             },
           }"
         >
-          <Game :game="game" />
+          <GameCard :game="game" />
         </router-link>
       </v-col>
     </v-row>
@@ -19,7 +19,7 @@
 
 <script>
 import gamesService from "../services/gamesService";
-import Game from "../components/Game.vue";
+import GameCard from "../components/GameCard.vue";
 
 export default {
   name: "Games",
@@ -29,7 +29,7 @@ export default {
     };
   },
   components: {
-    Game,
+    GameCard,
   },
   async mounted() {
     this.games = await gamesService.getAllGames();

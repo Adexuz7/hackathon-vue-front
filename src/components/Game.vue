@@ -84,9 +84,6 @@ export default {
 <style scoped>
 .title {
   color: white;
-  text-shadow: #000 0px 0px 1px,
-    1px 1px 0 #000;
+  text-shadow: #000 0px 0px 1px, 1px 1px 0 #000;
 }
 </style>
-
-// alt image when game has no cover? src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"

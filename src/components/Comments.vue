@@ -4,7 +4,15 @@
       <v-list-item-content>
         <v-list-item-title>{{ comment.author }}</v-list-item-title>
         <v-list-item-subtitle>{{ comment.comment }}</v-list-item-subtitle>
-        <v-list-item-subtitle>{{ comment.rate }}</v-list-item-subtitle>
+        <v-list-item-subtitle>
+          <v-rating
+            v-model="comment.rate"
+            background-color="pink lighten-3"
+            color="pink"
+            small
+            readonly
+          ></v-rating>
+        </v-list-item-subtitle>
       </v-list-item-content>
     </v-list-item>
   </v-card>
