@@ -1,48 +1,46 @@
 <template>
-  <v-app>
-    <v-app-bar app color="primary" dark>
-      <!-- <div class="d-flex align-center">
+  <v-card class="overflow-hidden">
+    <v-app-bar
+      absolute
+      color="#6A76AB"
+      dark
+      prominent
+      src="./assets/955059.jpg"
+    >
+      <template v-slot:img="{ props }">
         <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
+          v-bind="props"
+          gradient="to top right, rgba(100,115,201,.7), rgba(25,32,72,.7)"
+        ></v-img>
+      </template>
 
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div> -->
+      <v-app-bar-nav-icon></v-app-bar-nav-icon>
 
-      <v-spacer />
+      <v-spacer></v-spacer>
 
-      <v-btn text @click="toHomeView" class="nav-btn">Home</v-btn>
-      <v-btn text @click="toGamesView" class="nav-btn">Games</v-btn>
-      <v-btn text @click="toAboutView" class="nav-btn">About</v-btn>
+      <v-btn icon>
+        <v-icon>mdi-magnify</v-icon>
+      </v-btn>
 
-      <v-spacer />
+      <v-btn icon>
+        <v-icon>mdi-heart</v-icon>
+      </v-btn>
 
-      <!-- <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn> -->
+      <v-btn icon>
+        <v-icon>mdi-dots-vertical</v-icon>
+      </v-btn>
+
+      <template v-slot:extension>
+        <v-spacer></v-spacer>
+        <v-btn text @click="toHomeView" class="nav-btn">Home</v-btn>
+
+        <v-btn text @click="toGamesView" class="nav-btn">Games</v-btn>
+
+        <v-btn text @click="toAboutView" class="nav-btn">About</v-btn>
+        <v-spacer></v-spacer>
+      </template>
     </v-app-bar>
-
-    <v-main>
-      <router-view />
-    </v-main>
-  </v-app>
+  </v-card>
 </template>
 
 <script>
@@ -69,5 +67,6 @@ export default {
 <style scoped>
 .nav-btn {
   margin: 1px;
+  font-family: Roboto, sans-serif;
 }
 </style>
